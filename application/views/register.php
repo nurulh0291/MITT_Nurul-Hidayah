@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Forms</title>
+    <title>Regisration Forms</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
@@ -110,22 +110,29 @@
 </head>
 <body>
     <div class="auth-form">
-       <div class="card-header bg-transparent mb-0"><h5 class="text-center">Please <span class="font-weight-bold text-primary">LOGIN</span></h5></div>
-            <div class="card-body">
-              <form action="" id="loginForm">
-                <div class="form-group">
-                  <input type="text" name="" class="form-control" placeholder="Username">
-                </div>
-                <div class="form-group">
-                  <input type="text" name="" class="form-control" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <button type="submit" name="" value="Login" class="btn btn-primary btn-block" onclick="Login();">Login</button>
-                </div>
-                <hr>
-            <!-- <p>Don't have an account!</p>  -->
-              <a href="http://localhost/mitt-frontend/auth/register" id="signup">Sign up New Account</a></p>
-              </form>
+        <form id="registrationForm">
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="address" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item datepicker" id="birthdate" placeholder="Birth Date">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <button type="Submit" class="btn btn-block create-account">Create Account</button>
+            </div>
+        </form>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
@@ -137,9 +144,41 @@
              $('.datepicker').datepicker();
          });
 
-         function Login() {
-          window.location.href = "http://localhost/mitt-frontend/dashboard";
-        }
-      </script>
+         $("#registrationForm").submit(function(event)
+            {
+
+                console.log('test');
+                event.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    datatype:"json",
+                    url: "https://development.inhealth.co.id/samplebackend/api/UserProfile/Register",
+                    data:({
+                        username : $('#username').val(),
+                        name: $('#name').val(),
+                        address : $('#address').val(),
+                        birthdate: $('#birthdate').val(),
+                        email : $('#email').val(),
+                    }),
+                    success: function(result)
+                    {
+
+                        alert(result);
+                        // if(result && result.auth_token.length>1) // you should do your checking here
+                        // {
+                        //     window.location = 'http://www.google.com/'; //just to show that it went through
+                        // }
+                        // else
+                        // {
+                        //     $('#result').empty().addClass('error')
+                        //         .append('Something is wrong.');
+                        // }
+                    }
+                });
+                return false;
+            });
+
+
+    </script>
 </body>
 </html>
