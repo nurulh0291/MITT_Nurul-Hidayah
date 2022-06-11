@@ -13,7 +13,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="display: flex; justify-content:flex-end">
       <form class="form-inline">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Logout</button>
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" onclick="logout();">Logout</button>
       </form>
   	</nav>
 	<div class="card" style="width: 18rem;">
@@ -25,8 +25,8 @@
 			    Master
 			  </button>
 			  <div class="dropdown-menu" aria-labelledby="masterButton">
-			    <a class="dropdown-item" href="#">Skill</a>
-			    <a class="dropdown-item" href="#">Skill Level</a>
+			    <a class="dropdown-item" href="http://localhost/mitt-frontend/masterskill">Skill</a>
+			    <a class="dropdown-item" href="http://localhost/mitt-frontend/masterskill/skill_level">Skill Level</a>
 			  </div>
 			</div>
 	  </div>
@@ -39,6 +39,11 @@
  $(document).ready(function(){
     $('.dropdown-toggle').dropdown();
 });
+
+ function logout() {
+          window.location.href = "http://localhost/mitt-frontend/auth/login";
+        }
+
 </script>
 </body>
 

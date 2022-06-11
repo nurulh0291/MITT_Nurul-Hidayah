@@ -18,7 +18,7 @@ class Auth extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-	public function index()
+	public function login()
 	{
 		$this->load->view('login');
 	}
@@ -32,7 +32,7 @@ class Auth extends CI_Controller {
 	{
 
 		$toURL = "https://development.inhealth.co.id/samplebackend/api/UserProfile/Register";
-		var_dump($this->input->post());exit;
+
 	}
 
 
