@@ -28,5 +28,12 @@ class Auth extends CI_Controller {
 		$this->load->view('register');
 	}
 
+	public function register_auth()
+	{
+
+		$toURL = "https://development.inhealth.co.id/samplebackend/api/UserProfile/Register";
+		var_dump($this->input->post());exit;
+	}
+
 
 }

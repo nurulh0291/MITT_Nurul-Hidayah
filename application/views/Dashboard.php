@@ -9,13 +9,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
  </head>
 <body>
-    <button class="btn btn-primary btn-block">Home</button>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="display: flex; justify-content:flex-end">
+      <form class="form-inline">
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Logout</button>
+      </form>
+  	</nav>
+	<div class="card" style="width: 18rem;">
+	  <div class="card-body">
+	    <button class="btn btn-primary btn-block">Home</button><br>
+	    <button class="btn btn-primary btn-block">User Profile</button><br>
+		    <div class="dropdown">
+			  <button class="btn btn-primary dropdown-toggle" type="button" id="masterButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Master
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="masterButton">
+			    <a class="dropdown-item" href="#">Skill</a>
+			    <a class="dropdown-item" href="#">Skill Level</a>
+			  </div>
+			</div>
+	  </div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+ $(document).ready(function(){
+    $('.dropdown-toggle').dropdown();
+});
+</script>
 </body>
+
+
 </html>

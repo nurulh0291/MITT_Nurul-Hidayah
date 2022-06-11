@@ -147,12 +147,11 @@
          $("#registrationForm").submit(function(event)
             {
 
-                console.log('test');
                 event.preventDefault();
                 $.ajax({
                     type: "POST",
                     datatype:"json",
-                    url: "https://development.inhealth.co.id/samplebackend/api/UserProfile/Register",
+                    url: "http://localhost/mitt-frontend/auth/register_auth",
                     data:({
                         username : $('#username').val(),
                         name: $('#name').val(),
